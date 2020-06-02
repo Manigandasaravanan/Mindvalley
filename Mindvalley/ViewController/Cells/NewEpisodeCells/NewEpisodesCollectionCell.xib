@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gilroy-Bold.ttf">
+            <string>Gilroy-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NewEpisodesCollectionCell" id="gTV-IL-0wX" customClass="NewEpisodesCollectionCell" customModule="Mindvalley" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="374"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="172" height="374"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgShadow" translatesAutoresizingMaskIntoConstraints="NO" id="NJc-vr-o0k">
+                        <rect key="frame" x="0.0" y="0.0" width="172" height="258"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="258" id="NEQ-kd-48G"/>
+                        </constraints>
+                    </imageView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0W-mh-ykc">
+                        <rect key="frame" x="10" y="15" width="152" height="228"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="228" id="AHl-ZL-ABT"/>
+                            <constraint firstAttribute="width" constant="152" id="RQV-HO-mrK"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cure For Loneliness" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-Eg-4yT">
+                        <rect key="frame" x="10" y="266" width="142" height="34.5"/>
+                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-6N-AVG">
+                        <rect key="frame" x="10" y="312.5" width="162" height="0.0"/>
+                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
+                        <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="cFv-6N-AVG" firstAttribute="leading" secondItem="Tmi-Eg-4yT" secondAttribute="leading" id="8Ic-8y-8EJ"/>
+                <constraint firstItem="Tmi-Eg-4yT" firstAttribute="leading" secondItem="k0W-mh-ykc" secondAttribute="leading" id="Daa-LC-Zvn"/>
+                <constraint firstItem="k0W-mh-ykc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="FLE-ZB-N4H"/>
+                <constraint firstItem="k0W-mh-ykc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="MiW-6w-qgJ"/>
+                <constraint firstItem="NJc-vr-o0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QXr-at-n36"/>
+                <constraint firstAttribute="trailing" secondItem="Tmi-Eg-4yT" secondAttribute="trailing" constant="20" id="V00-6v-U6L"/>
+                <constraint firstAttribute="trailing" secondItem="NJc-vr-o0k" secondAttribute="trailing" id="eVS-6a-xBB"/>
+                <constraint firstAttribute="trailing" secondItem="cFv-6N-AVG" secondAttribute="trailing" id="edk-DP-f8L"/>
+                <constraint firstItem="NJc-vr-o0k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fsQ-AW-CCI"/>
+                <constraint firstItem="cFv-6N-AVG" firstAttribute="top" secondItem="Tmi-Eg-4yT" secondAttribute="bottom" constant="12" id="hUj-qC-6BB"/>
+                <constraint firstAttribute="trailing" secondItem="k0W-mh-ykc" secondAttribute="trailing" constant="10" id="jTL-uf-0yQ"/>
+                <constraint firstItem="Tmi-Eg-4yT" firstAttribute="top" secondItem="k0W-mh-ykc" secondAttribute="bottom" constant="23" id="kkl-F7-pLJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="172" height="375"/>
+            <connections>
+                <outlet property="posterImg" destination="k0W-mh-ykc" id="U5d-1u-dGm"/>
+                <outlet property="subtitleLabel" destination="cFv-6N-AVG" id="HUJ-JE-2Yx"/>
+                <outlet property="titleLabel" destination="Tmi-Eg-4yT" id="mGX-XU-dZ0"/>
+            </connections>
+            <point key="canvasLocation" x="255.07246376811597" y="261.16071428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="bgShadow" width="192" height="268"/>
+    </resources>
+</document>
