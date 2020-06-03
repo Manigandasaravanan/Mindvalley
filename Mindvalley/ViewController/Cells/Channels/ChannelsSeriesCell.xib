@@ -16,24 +16,28 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ChannelsSeriesCell" reuseIdentifier="ChannelsSeriesCell" id="gTV-IL-0wX" customClass="ChannelsSeriesCell" customModule="Mindvalley" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+            <rect key="frame" x="0.0" y="0.0" width="338" height="248"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="229"/>
+                <rect key="frame" x="0.0" y="0.0" width="338" height="248"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Cb-ys-r80">
+                        <rect key="frame" x="9" y="15" width="320" height="172"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eq-A6-LUC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="172"/>
+                        <rect key="frame" x="9" y="15" width="320" height="172"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="320" id="cbS-Y4-kqa"/>
                             <constraint firstAttribute="height" constant="172" id="y1p-eC-dsT"/>
                         </constraints>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="overlay" translatesAutoresizingMaskIntoConstraints="NO" id="Rxs-nr-P7j">
-                        <rect key="frame" x="0.0" y="55.5" width="320" height="116.5"/>
+                        <rect key="frame" x="9" y="70" width="320" height="117"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cure For Loneliness" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nax-Zx-cE6">
-                        <rect key="frame" x="0.0" y="183" width="320" height="17.5"/>
+                        <rect key="frame" x="10" y="200" width="319" height="17.5"/>
                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -41,24 +45,29 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Nax-Zx-cE6" firstAttribute="top" secondItem="2eq-A6-LUC" secondAttribute="bottom" constant="11" id="0PP-2L-G8N"/>
-                <constraint firstAttribute="trailing" secondItem="2eq-A6-LUC" secondAttribute="trailing" id="3Pt-if-MWi"/>
-                <constraint firstItem="2eq-A6-LUC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7VA-as-lPf"/>
-                <constraint firstItem="Nax-Zx-cE6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Aks-55-Nbd"/>
-                <constraint firstItem="2eq-A6-LUC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="aJr-pE-1PI"/>
-                <constraint firstAttribute="trailing" secondItem="Nax-Zx-cE6" secondAttribute="trailing" id="cTR-iy-5ZG"/>
-                <constraint firstItem="Rxs-nr-P7j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jzS-HR-5ng"/>
-                <constraint firstItem="Rxs-nr-P7j" firstAttribute="bottom" secondItem="2eq-A6-LUC" secondAttribute="bottom" id="q06-vG-gOK"/>
-                <constraint firstAttribute="trailing" secondItem="Rxs-nr-P7j" secondAttribute="trailing" id="qTu-qf-zA1"/>
+                <constraint firstItem="Nax-Zx-cE6" firstAttribute="top" secondItem="2eq-A6-LUC" secondAttribute="bottom" constant="13" id="0PP-2L-G8N"/>
+                <constraint firstItem="2Cb-ys-r80" firstAttribute="trailing" secondItem="2eq-A6-LUC" secondAttribute="trailing" id="0bx-U8-q1B"/>
+                <constraint firstAttribute="trailing" secondItem="2eq-A6-LUC" secondAttribute="trailing" constant="9" id="3Pt-if-MWi"/>
+                <constraint firstItem="2Cb-ys-r80" firstAttribute="leading" secondItem="2eq-A6-LUC" secondAttribute="leading" id="5Iu-QB-hEc"/>
+                <constraint firstItem="2Cb-ys-r80" firstAttribute="bottom" secondItem="2eq-A6-LUC" secondAttribute="bottom" id="6CB-6q-QQA"/>
+                <constraint firstItem="Rxs-nr-P7j" firstAttribute="leading" secondItem="2eq-A6-LUC" secondAttribute="leading" id="9B5-n8-2Gy"/>
+                <constraint firstItem="2eq-A6-LUC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="9" id="CBY-pB-ZZ2"/>
+                <constraint firstItem="Rxs-nr-P7j" firstAttribute="bottom" secondItem="2eq-A6-LUC" secondAttribute="bottom" id="S7h-YB-Xum"/>
+                <constraint firstItem="Nax-Zx-cE6" firstAttribute="leading" secondItem="2eq-A6-LUC" secondAttribute="leading" constant="1" id="V38-FD-2j6"/>
+                <constraint firstItem="2eq-A6-LUC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="aJr-pE-1PI"/>
+                <constraint firstItem="Rxs-nr-P7j" firstAttribute="trailing" secondItem="2eq-A6-LUC" secondAttribute="trailing" id="iwS-LA-i0p"/>
+                <constraint firstItem="Nax-Zx-cE6" firstAttribute="trailing" secondItem="2eq-A6-LUC" secondAttribute="trailing" id="jsP-oB-ErW"/>
+                <constraint firstItem="2Cb-ys-r80" firstAttribute="top" secondItem="2eq-A6-LUC" secondAttribute="top" id="yNB-Xj-F0r"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="327" height="195"/>
+            <size key="customSize" width="363" height="214"/>
             <connections>
                 <outlet property="overlayImage" destination="Rxs-nr-P7j" id="pBJ-T7-fV7"/>
                 <outlet property="posterImg" destination="2eq-A6-LUC" id="INg-4w-7ZR"/>
+                <outlet property="shadowView" destination="2Cb-ys-r80" id="m96-vu-qCp"/>
                 <outlet property="titleLabel" destination="Nax-Zx-cE6" id="ymH-d0-hW1"/>
             </connections>
-            <point key="canvasLocation" x="23.188405797101453" y="143.63839285714286"/>
+            <point key="canvasLocation" x="49.275362318840585" y="150"/>
         </collectionViewCell>
     </objects>
     <resources>

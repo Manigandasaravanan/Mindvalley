@@ -20,5 +20,6 @@ extension NewEpisodes {
     @NSManaged public var title: String?
     @NSManaged public var coverAssetUrl: String?
     @NSManaged public var channelTitle: String?
+    @NSManaged public var orderId: String?
 
 }

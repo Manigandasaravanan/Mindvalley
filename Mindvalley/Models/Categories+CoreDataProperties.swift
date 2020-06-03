@@ -17,5 +17,6 @@ extension Categories {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var orderId: String?
 
 }

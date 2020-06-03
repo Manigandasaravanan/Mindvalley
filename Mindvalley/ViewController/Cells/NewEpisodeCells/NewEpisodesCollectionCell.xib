@@ -36,14 +36,14 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Cure For Loneliness" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmi-Eg-4yT">
-                        <rect key="frame" x="10" y="266" width="142" height="34.5"/>
+                        <rect key="frame" x="10" y="253" width="152" height="34.5"/>
                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFv-6N-AVG">
-                        <rect key="frame" x="10" y="312.5" width="162" height="0.0"/>
-                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
+                        <rect key="frame" x="10" y="299.5" width="152" height="0.0"/>
+                        <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="13"/>
                         <color key="textColor" red="0.58431372549019611" green="0.59607843137254901" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -56,13 +56,13 @@
                 <constraint firstItem="k0W-mh-ykc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="FLE-ZB-N4H"/>
                 <constraint firstItem="k0W-mh-ykc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="MiW-6w-qgJ"/>
                 <constraint firstItem="NJc-vr-o0k" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="QXr-at-n36"/>
-                <constraint firstAttribute="trailing" secondItem="Tmi-Eg-4yT" secondAttribute="trailing" constant="20" id="V00-6v-U6L"/>
+                <constraint firstItem="cFv-6N-AVG" firstAttribute="trailing" secondItem="k0W-mh-ykc" secondAttribute="trailing" id="WMN-SO-3Av"/>
                 <constraint firstAttribute="trailing" secondItem="NJc-vr-o0k" secondAttribute="trailing" id="eVS-6a-xBB"/>
-                <constraint firstAttribute="trailing" secondItem="cFv-6N-AVG" secondAttribute="trailing" id="edk-DP-f8L"/>
                 <constraint firstItem="NJc-vr-o0k" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fsQ-AW-CCI"/>
                 <constraint firstItem="cFv-6N-AVG" firstAttribute="top" secondItem="Tmi-Eg-4yT" secondAttribute="bottom" constant="12" id="hUj-qC-6BB"/>
                 <constraint firstAttribute="trailing" secondItem="k0W-mh-ykc" secondAttribute="trailing" constant="10" id="jTL-uf-0yQ"/>
-                <constraint firstItem="Tmi-Eg-4yT" firstAttribute="top" secondItem="k0W-mh-ykc" secondAttribute="bottom" constant="23" id="kkl-F7-pLJ"/>
+                <constraint firstItem="Tmi-Eg-4yT" firstAttribute="top" secondItem="k0W-mh-ykc" secondAttribute="bottom" constant="10" id="kkl-F7-pLJ"/>
+                <constraint firstItem="Tmi-Eg-4yT" firstAttribute="trailing" secondItem="k0W-mh-ykc" secondAttribute="trailing" id="yxi-Qr-9aN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="172" height="375"/>

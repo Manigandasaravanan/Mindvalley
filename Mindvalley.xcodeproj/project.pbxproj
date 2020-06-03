@@ -47,6 +47,8 @@
 		2E30E50924856C9B0020C063 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30E50824856C9B0020C063 /* AppConstants.swift */; };
 		2E30E50C24856E750020C063 /* AppURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30E50B24856E750020C063 /* AppURL.swift */; };
 		2E30E50E248610930020C063 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E30E50D248610930020C063 /* Toast.swift */; };
+		2E8C3C37248779F50057DBB0 /* AppUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C3C36248779F50057DBB0 /* AppUtilities.swift */; };
+		2E8C3C3A24877AC50057DBB0 /* AppExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8C3C3924877AC50057DBB0 /* AppExtension.swift */; };
 		85672523CAC645C5B2877FD6 /* Pods_Mindvalley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97060ACB1BD296D9789814A9 /* Pods_Mindvalley.framework */; };
 /* End PBXBuildFile section */
 
@@ -105,6 +107,8 @@
 		2E30E50824856C9B0020C063 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		2E30E50B24856E750020C063 /* AppURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppURL.swift; sourceTree = "<group>"; };
 		2E30E50D248610930020C063 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		2E8C3C36248779F50057DBB0 /* AppUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUtilities.swift; sourceTree = "<group>"; };
+		2E8C3C3924877AC50057DBB0 /* AppExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppExtension.swift; sourceTree = "<group>"; };
 		97060ACB1BD296D9789814A9 /* Pods_Mindvalley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mindvalley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8BE285332D1B8F520A37BD /* Pods-Mindvalley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindvalley.debug.xcconfig"; path = "Target Support Files/Pods-Mindvalley/Pods-Mindvalley.debug.xcconfig"; sourceTree = "<group>"; };
 		DC6FF0E3824B996737615330 /* Pods-Mindvalley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mindvalley.release.xcconfig"; path = "Target Support Files/Pods-Mindvalley/Pods-Mindvalley.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 				2E30E50A24856E6C0020C063 /* AppURL */,
 				2E17E14E2486166300C2CB9A /* DB */,
 				2E17E15E24863B7700C2CB9A /* Resources */,
+				2E8C3C3824877AB30057DBB0 /* AppExtension */,
 				2E30E4D82485642E0020C063 /* Main.storyboard */,
 				2E30E4DE248564320020C063 /* Assets.xcassets */,
 				2E30E4E0248564320020C063 /* LaunchScreen.storyboard */,
@@ -286,6 +291,7 @@
 		2E30E50424856BF60020C063 /* AppUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				2E8C3C36248779F50057DBB0 /* AppUtilities.swift */,
 				2E30E50524856C100020C063 /* Reachability.swift */,
 				2E30E50D248610930020C063 /* Toast.swift */,
 			);
@@ -315,6 +321,14 @@
 				2E17E16A24863EE200C2CB9A /* Cells */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2E8C3C3824877AB30057DBB0 /* AppExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2E8C3C3924877AC50057DBB0 /* AppExtension.swift */,
+			);
+			path = AppExtension;
 			sourceTree = "<group>";
 		};
 		6CF36898E4FB99FA3A103DA2 /* Pods */ = {
@@ -498,6 +512,7 @@
 				2E30E4FB248565B30020C063 /* Categories+CoreDataProperties.swift in Sources */,
 				2E17E17724865CFC00C2CB9A /* NewEpisodesCell.swift in Sources */,
 				2E17E1542486218B00C2CB9A /* Channels+CoreDataProperties.swift in Sources */,
+				2E8C3C37248779F50057DBB0 /* AppUtilities.swift in Sources */,
 				2E17E14D248615BF00C2CB9A /* NewEpisodes+CoreDataProperties.swift in Sources */,
 				2E30E50024856A4D0020C063 /* NetworkManager.swift in Sources */,
 				2E17E18524867DBB00C2CB9A /* CategoriesTableCell.swift in Sources */,
@@ -507,6 +522,7 @@
 				2E30E50624856C100020C063 /* Reachability.swift in Sources */,
 				2E17E18824867E4E00C2CB9A /* CategoriesCell.swift in Sources */,
 				2E30E4D72485642E0020C063 /* ViewController.swift in Sources */,
+				2E8C3C3A24877AC50057DBB0 /* AppExtension.swift in Sources */,
 				2E17E1502486167300C2CB9A /* DBManager.swift in Sources */,
 				2E30E50C24856E750020C063 /* AppURL.swift in Sources */,
 				2E30E50324856BAD0020C063 /* APPPresenter.swift in Sources */,

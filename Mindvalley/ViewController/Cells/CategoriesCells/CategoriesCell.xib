@@ -22,7 +22,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="160" height="60"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health &amp; Fitness" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-wx-1Dk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health &amp; Fitness" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZt-wx-1Dk">
                         <rect key="frame" x="17" y="21.5" width="126.5" height="17.5"/>
                         <fontDescription key="fontDescription" name="Gilroy-Bold" family="Gilroy-Bold" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,8 +32,8 @@
             </view>
             <color key="backgroundColor" red="0.58431372550000005" green="0.59607843140000005" blue="0.61568627450000002" alpha="0.192619149543379" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="LZt-wx-1Dk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="7eX-O8-G4O"/>
-                <constraint firstItem="LZt-wx-1Dk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jjb-eT-CSH"/>
+                <constraint firstItem="LZt-wx-1Dk" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Jh8-Xj-gGE"/>
+                <constraint firstItem="LZt-wx-1Dk" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VD1-Am-tZU"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="161" height="57"/>

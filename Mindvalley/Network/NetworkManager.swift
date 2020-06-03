@@ -25,7 +25,8 @@ class NetworkManager: NSObject {
         managerArray = NSMutableArray()
     }
     
-    func getSessionManager() -> Alamofire.Session {
+    // Configure Session Manager
+    func getSessionManager() -> Alamofire.Session? {
         var shuntingManager: Alamofire.Session
         let configuration = URLSessionConfiguration.af.default
         configuration.timeoutIntervalForRequest = 60
@@ -33,35 +34,38 @@ class NetworkManager: NSObject {
         return shuntingManager
     }
     
+    // GET Api call
     func makeGetCallWithSwiftyJson(params: [String: Any]?, toURL: String, successBlock: @escaping ObjectJSONBlock, failedWithMessage: @escaping StringBlock, errorBlock: @escaping ErrorBlock) {
         DispatchQueue.main.async {
-            if !APPPresenter.shared.isInternetConnectionAvailable() {
+            if !AppUtilities.shared.isInternetConnectionAvailable() {
                 let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey: AppMessages.noInternet])
                 errorBlock(error)
             }
         }
-        let manager: Alamofire.Session? = getSessionManager()
-        managerArray?.add(manager!)
-        manager?.session.configuration.timeoutIntervalForRequest = 60
-        
-        manager?.request(toURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil ).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                if let code = json["responseCode"].string {
-                    if code == "1" {
-                        successBlock(json)
+        if let manager: Alamofire.Session = getSessionManager() {
+            managerArray?.add(manager)
+            manager.session.configuration.timeoutIntervalForRequest = 60
+            
+            manager.request(toURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil ).validate().responseJSON { response in
+                self.managerArray?.remove(manager)
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    if let code = json["responseCode"].string {
+                        if code == "1" {
+                            successBlock(json)
+                        } else {
+                            let stringForError: String = AppMessages.noServer
+                            failedWithMessage(stringForError)
+                            return
+                        }
                     } else {
-                        let stringForError: String = AppMessages.noServer
-                        failedWithMessage(stringForError)
+                        successBlock(json)
                         return
                     }
-                } else {
-                    successBlock(json)
-                    return
+                case .failure(let error):
+                    errorBlock(error as NSError)
                 }
-            case .failure(let error):
-                errorBlock(error as NSError)
             }
         }
         

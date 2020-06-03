@@ -76,7 +76,7 @@ class DBManager: NSObject {
     func saveNewEpisodesToTable(jsonArray: [Any], onCompletion completionBlock: @escaping BoolBlock) {
         self.truncateNewEpisode()
         let local: NSManagedObjectContext = NSManagedObjectContext.mr_rootSaving()
-        for obj in jsonArray {
+        for (index, obj) in jsonArray.enumerated() {
             if let htmlObject: NSDictionary = obj as? NSDictionary {
                 
                 let lookup: NewEpisodes? = NewEpisodes.mr_createEntity(in: local)
@@ -108,7 +108,7 @@ class DBManager: NSObject {
                 } else {
                     lookup?.coverAssetUrl = ""
                 }
-                
+                lookup?.orderId = "\(index)"
             }
         }
         local.mr_saveToPersistentStore { (_, _) in
@@ -120,7 +120,7 @@ class DBManager: NSObject {
     func saveChannelsToTable(jsonArray: [Any], onCompletion completionBlock: @escaping BoolBlock) {
         self.truncateChannels()
         let local: NSManagedObjectContext = NSManagedObjectContext.mr_rootSaving()
-        for obj in jsonArray {
+        for (index, obj) in jsonArray.enumerated() {
             if let htmlObject: NSDictionary = obj as? NSDictionary {
 
                 let lookup: Channels? = Channels.mr_createEntity(in: local)
@@ -144,7 +144,7 @@ class DBManager: NSObject {
                 }
 
                 if let data = htmlObject.value(forKey: "latestMedia") {
-                    let latestMediaJson = APPPresenter.shared.jsonToString(json: data as AnyObject)
+                    let latestMediaJson = AppUtilities.shared.jsonToString(json: data as AnyObject)
                     lookup?.latestMedia = latestMediaJson
                 } else {
                     lookup?.latestMedia = ""
@@ -180,13 +180,14 @@ class DBManager: NSObject {
                             lookup?.series = ""
                         } else {
                             lookup?.isSeries = "1"
-                            let seriesJson = APPPresenter.shared.jsonToString(json: data as AnyObject)
+                            let seriesJson = AppUtilities.shared.jsonToString(json: data as AnyObject)
                             lookup?.series = seriesJson
                         }
                     }
                 } else {
                     lookup?.series = ""
                 }
+                lookup?.orderId = "\(index)"
             }
         }
         local.mr_saveToPersistentStore { (_, _) in
@@ -198,7 +199,7 @@ class DBManager: NSObject {
     func saveCategoriesToTable(jsonArray: [Any], onCompletion completionBlock: @escaping BoolBlock) {
         self.truncateCategories()
         let local: NSManagedObjectContext = NSManagedObjectContext.mr_rootSaving()
-        for obj in jsonArray {
+        for (index, obj) in jsonArray.enumerated() {
             if let htmlObject: NSDictionary = obj as? NSDictionary {
                 
                 let lookup: Categories? = Categories.mr_createEntity(in: local)
@@ -208,6 +209,8 @@ class DBManager: NSObject {
                 } else {
                     lookup?.name = ""
                 }
+                
+                lookup?.orderId = "\(index)"
             }
         }
         local.mr_saveToPersistentStore { (_, _) in
@@ -218,6 +221,9 @@ class DBManager: NSObject {
     // MARK: - Fetch New Episodes
     func getFieldsForNewEpisodes() -> [NewEpisodes]? {
         let request: NSFetchRequest? = NewEpisodes.mr_requestAll()
+        let sortDescriptor = NSSortDescriptor(key: "orderId", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortDescriptors = [sortDescriptor]
+        request?.sortDescriptors = sortDescriptors
         let objects = NewEpisodes.mr_executeFetchRequest(request!) as? [NewEpisodes]
         return objects
     }
@@ -225,6 +231,9 @@ class DBManager: NSObject {
     // MARK: - Fetch Channels
     func getFieldsForChannels() -> [Channels]? {
         let request: NSFetchRequest? = Channels.mr_requestAll()
+        let sortDescriptor = NSSortDescriptor(key: "orderId", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortDescriptors = [sortDescriptor]
+        request?.sortDescriptors = sortDescriptors
         let objects = Channels.mr_executeFetchRequest(request!) as? [Channels]
         return objects
     }
@@ -232,6 +241,9 @@ class DBManager: NSObject {
     // MARK: - Fetch Channels
     func getFieldsForCategories() -> [Categories]? {
         let request: NSFetchRequest? = Categories.mr_requestAll()
+        let sortDescriptor = NSSortDescriptor(key: "orderId", ascending: true, selector: #selector(NSString.localizedStandardCompare(_:)))
+        let sortDescriptors = [sortDescriptor]
+        request?.sortDescriptors = sortDescriptors
         let objects = Categories.mr_executeFetchRequest(request!) as? [Categories]
         return objects
     }

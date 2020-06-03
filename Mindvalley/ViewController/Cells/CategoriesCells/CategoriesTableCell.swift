@@ -13,6 +13,7 @@ class CategoriesTableCell: UITableViewCell, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var collView: UICollectionView!
     var categoriesArr = [Categories]()
     @IBOutlet weak var categoryHeightConstant: NSLayoutConstraint!
+    @IBOutlet weak var browseCatLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -44,10 +45,7 @@ extension CategoriesTableCell {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
-        let category = self.categoriesArr[indexPath.row]
-        cell.categoryLabel.text = category.name
-        return cell
+        return getCateoriesCells(collectionView: collectionView, indexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -67,6 +65,14 @@ extension CategoriesTableCell {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 16
+    }
+    
+    // MARK: - Get tableview cells
+    func getCateoriesCells(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoriesCell", for: indexPath) as! CategoriesCell
+        let category = self.categoriesArr[indexPath.row]
+        cell.categoryLabel.attributedText = AppUtilities.shared.setAttributedString(text: category.name ?? "", lineSpacing: 4, kern: 0.13)
+        return cell
     }
     
 }

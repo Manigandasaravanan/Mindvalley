@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Categories" representedClassName="Categories" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="orderId" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Channels" representedClassName="Channels" syncable="YES">
         <attribute name="coverAssetUrl" optional="YES" attributeType="String"/>
@@ -10,18 +11,20 @@
         <attribute name="isSeries" optional="YES" attributeType="String"/>
         <attribute name="latestMedia" optional="YES" attributeType="String"/>
         <attribute name="mediaCount" optional="YES" attributeType="String"/>
+        <attribute name="orderId" optional="YES" attributeType="String"/>
         <attribute name="series" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="NewEpisodes" representedClassName="NewEpisodes" syncable="YES">
         <attribute name="channelTitle" optional="YES" attributeType="String"/>
         <attribute name="coverAssetUrl" optional="YES" attributeType="String"/>
+        <attribute name="orderId" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Categories" positionX="-63" positionY="-18" width="128" height="58"/>
-        <element name="Channels" positionX="-54" positionY="27" width="128" height="163"/>
-        <element name="NewEpisodes" positionX="-63" positionY="-9" width="128" height="103"/>
+        <element name="Categories" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="Channels" positionX="-54" positionY="27" width="128" height="178"/>
+        <element name="NewEpisodes" positionX="-63" positionY="-9" width="128" height="118"/>
     </elements>
 </model>

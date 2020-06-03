@@ -19,7 +19,7 @@ var safeAreaTop: CGFloat? {
 }
 
 struct AppMessages {
-    static let noInternet = "No Internet"
+    static let noInternet = "No Internet connection"
     static let noServer = "Server not responding"
     
 }

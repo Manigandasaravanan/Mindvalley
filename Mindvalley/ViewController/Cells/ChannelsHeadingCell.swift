@@ -10,6 +10,8 @@ import UIKit
 
 class ChannelsHeadingCell: UITableViewCell {
 
+    @IBOutlet weak var channelHeadingLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

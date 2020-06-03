@@ -24,5 +24,6 @@ extension Channels {
     @NSManaged public var iconAssetUrl: String?
     @NSManaged public var coverAssetUrl: String?
     @NSManaged public var isSeries: String?
+    @NSManaged public var orderId: String?
 
 }

@@ -41,14 +41,14 @@ class APPPresenter: NSObject {
             }
         }, failedMessage: { (failedMessage) in
             if let failedMsg = failedMessage {
-                self.showToast(message: failedMsg)
+                AppUtilities.shared.showToast(message: failedMsg)
             }
         }, onerror: { (errorMessage) in
             if errorMessage?.localizedDescription == AppMessages.noInternet {
                 // Load from DB
                 self.newEpisodes = self.dbManager?.getFieldsForNewEpisodes()
                 if self.newEpisodes?.count == 0 {
-                    self.showToast(message: AppMessages.noInternet)
+                    AppUtilities.shared.showToast(message: AppMessages.noInternet)
                 } else {
                     completionBlock(true)
                 }
@@ -69,14 +69,14 @@ class APPPresenter: NSObject {
             }
         }, failedMessage: { (failedMessage) in
             if let failedMsg = failedMessage {
-                self.showToast(message: failedMsg)
+                AppUtilities.shared.showToast(message: failedMsg)
             }
         }, onerror: { (errorMessage) in
             if errorMessage?.localizedDescription == AppMessages.noInternet {
                 // Load from DB
                 self.channels = self.dbManager?.getFieldsForChannels()
                 if self.channels?.count == 0 {
-                    self.showToast(message: AppMessages.noInternet)
+                    AppUtilities.shared.showToast(message: AppMessages.noInternet)
                 } else {
                     completionBlock(true)
                 }
@@ -97,56 +97,19 @@ class APPPresenter: NSObject {
             }
         }, failedMessage: { (failedMessage) in
             if let failedMsg = failedMessage {
-                self.showToast(message: failedMsg)
+                AppUtilities.shared.showToast(message: failedMsg)
             }
         }, onerror: { (errorMessage) in
             if errorMessage?.localizedDescription == AppMessages.noInternet {
                 // Load from DB
                 self.categories = self.dbManager?.getFieldsForCategories()
                 if self.channels?.count == 0 {
-                    self.showToast(message: AppMessages.noInternet)
+                    AppUtilities.shared.showToast(message: AppMessages.noInternet)
                 } else {
                     completionBlock(true)
                 }
             }
         })
-    }
-    
-}
-
-extension APPPresenter {
-    
-    // Check internet connection is available
-    func isInternetConnectionAvailable() -> Bool {
-        return Reachability.isConnectedToNetwork()
-    }
-    
-    // Show Toast Messages
-    func showToast(message: String) {
-        Toast.showPositiveMessage(message: message)
-    }
-    
-    func convertJsonStringToJson(jsonString: String) -> [NSDictionary]? {
-        if let data = jsonString.data(using: .utf8) {
-            do {
-                return try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary]
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        return nil
-    }
-    
-    func jsonToString(json: AnyObject) -> String{
-        do {
-            let data1 = try JSONSerialization.data(withJSONObject: json, options: JSONSerialization.WritingOptions.prettyPrinted)
-            let convertedString = String(data: data1, encoding: String.Encoding.utf8) as NSString? ?? ""
-            debugPrint(convertedString)
-            return convertedString as String
-        } catch let myJSONError {
-            debugPrint(myJSONError)
-            return ""
-        }
     }
     
 }
